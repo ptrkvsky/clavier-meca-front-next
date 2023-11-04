@@ -1,0 +1,22 @@
+.section {
+  position: relative;
+}
+
+.section:after {
+  content: '';
+  z-index: 0;
+  display: block;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 488px;
+  height: 563px;
+  background-color: #8000ff;
+}
+
+@media screen and (max-width: 767px) {
+  .section:after {
+    display: none;
+  }
+}
