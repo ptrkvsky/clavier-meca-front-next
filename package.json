@@ -10,6 +10,7 @@
     "codegen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
+    "@portabletext/react": "^3.0.11",
     "@tanstack/react-query": "5.7.0",
     "@vanilla-extract/css": "1.13.0",
     "graphql": "16.8.1",

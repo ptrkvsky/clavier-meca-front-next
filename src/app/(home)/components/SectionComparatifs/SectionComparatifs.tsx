@@ -22,7 +22,13 @@ export async function SectionComparatifs() {
           const isRevert = !!(index & 1);
 
           return (
-            post && <SectionComparatifsItem post={post} isRevert={isRevert} />
+            post && (
+              <SectionComparatifsItem
+                key={post._id}
+                post={post}
+                isRevert={isRevert}
+              />
+            )
           );
         })}
       </section>
