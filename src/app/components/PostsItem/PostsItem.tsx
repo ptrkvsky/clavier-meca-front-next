@@ -1,10 +1,11 @@
 'use client';
 
+import { useState } from 'react';
 import { Post } from '@/app/gql/graphql';
 import { getImageInfo } from '@/app/utils/getImageInfo';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { stylePostsItem } from './PostsItem.css';
 
 interface Props {
   post: Post;
@@ -16,6 +17,7 @@ export function PostsItem({ post }: Readonly<Props>) {
   const handleEnter = () => {
     setHoverState(true);
   };
+
   const handleLeave = () => {
     setHoverState(false);
   };
@@ -25,21 +27,22 @@ export function PostsItem({ post }: Readonly<Props>) {
   );
 
   const slug = post?.slug?.current ?? '#';
+  const classHover = hoverState ? 'hover' : '';
 
   return (
     <>
       <Link
-        className="wrapper-title"
+        className={`${classHover} ${stylePostsItem.wrapperTitle}`}
         href={`/${slug}`}
         // hover={hoverState}
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
       >
-        <h3>{post.title}</h3>
+        <h3 className={stylePostsItem.title}>{post.title}</h3>
       </Link>
 
       <Link
-        className="wrapper-image"
+        className={`${classHover} ${stylePostsItem.wrapperImage}`}
         href={`/${slug}`}
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}

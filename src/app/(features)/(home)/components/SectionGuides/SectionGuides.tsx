@@ -12,8 +12,6 @@ export async function SectionGuides() {
   const dataGuides = await fetchSanity<Guides>(postsQueryHomeComparatifs);
   const postsGuides = dataGuides?.allHome[1]?.postGuides;
 
-  console.log(postsGuides);
-
   return postsGuides?.length ? (
     <section className={styleSectionGuides?.section}>
       <h2 className={styleSectionGuides?.title}>Comparatifs claviers</h2>

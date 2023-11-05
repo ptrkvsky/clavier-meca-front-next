@@ -4,7 +4,7 @@ import { style } from '@vanilla-extract/css';
 
 const section = style({
   marginTop: '128px',
-  selectors: {
+  '@media': {
     [mediaQueries.mobile]: {
       marginTop: '32px',
     },
@@ -17,19 +17,20 @@ const title = style({
   lineHeight: '1',
   fontFamily: globalTheme.font.title,
   letterSpacing: '-1px',
-  selectors: {
+
+  ':after': {
+    content: '""',
+    display: 'block',
+    position: 'absolute',
+    bottom: '-20px',
+    width: '74px',
+    height: '11px',
+    backgroundColor: globalTheme.color.primary,
+  },
+  '@media': {
     [mediaQueries.mobile]: {
       fontSize: '40px',
       padding: '0 8px',
-    },
-    '&:after': {
-      content: '""',
-      display: 'block',
-      position: 'absolute',
-      bottom: '-20px',
-      width: '74px',
-      height: '11px',
-      backgroundColor: globalTheme.color.primary,
     },
   },
 });
