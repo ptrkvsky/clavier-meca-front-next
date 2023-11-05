@@ -14,6 +14,12 @@ pnpm dev
 bun dev
 ```
 
+## Sanity
+
 ## Vanilla Extract
 
 ## GraphQL Code Gen
+
+## Playground
+
+https://dhh9ms17.api.sanity.io/v1/graphql/production/default
