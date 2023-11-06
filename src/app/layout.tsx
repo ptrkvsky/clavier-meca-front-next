@@ -4,6 +4,8 @@ import '@/app/styles/text.css';
 import '@/app/styles/fonts';
 import Providers from './utils/Providers';
 import { globalTheme } from './styles/theme.css';
+import { style } from './layout.css';
+import { Footer } from './components/Footer/Footer';
 
 export default function RootLayout({
   children,
@@ -13,7 +15,12 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <div className={style.wrapperGlobal}>
+            <main className={style.wrapperMain}>{children}</main>
+            <Footer />
+          </div>
+        </Providers>
       </body>
     </html>
   );
