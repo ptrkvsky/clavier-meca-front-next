@@ -37,23 +37,9 @@ export async function SectionHero() {
           height={imageHeight}
           alt={imageAlt}
           fetchPriority="high"
+          priority
         />
       </div>
     </div>
-    // <Grid>
-    //   <ColLeft>
-    //     <div>
-    //       <div className="container-title">
-    //         <Title>{h1}</Title>
-    //       </div>
-    //       <Intro>
-    //         <PortableText blocks={intro} />
-    //       </Intro>
-    //     </div>
-    //   </ColLeft>
-    //   <ColRight>
-    //     <GatsbyImage image={image} alt={alt} />
-    //   </ColRight>
-    // </Grid>
   );
 }
