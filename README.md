@@ -23,3 +23,9 @@ bun dev
 ## Playground
 
 https://dhh9ms17.api.sanity.io/v1/graphql/production/default
+
+## ENV
+Ajouter .env.example
+
+## Temps
+05h00
