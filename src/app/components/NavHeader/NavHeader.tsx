@@ -1,8 +1,10 @@
 import fetchSanity from '@/app/helpers/fetchSanity';
+import './NavHeader.css.css';
 import { queryNavHeader } from './NavHeader.queries';
 import { styleNavHeader } from './NavHeader.css';
 import { Menu } from '@/app/gql/graphql';
 import { NavHeaderItem } from '../NavHeaderItem/NavHeaderItem';
+import { ButtonMenu } from '../ButtonMenu/ButtonMenu';
 
 interface DataNavHeader {
   allMenu: Menu[];
@@ -28,6 +30,12 @@ export async function NavHeader() {
             return <NavHeaderItem key={key} label={label} slug={slug} />;
           })}
         </ul>
+        <div
+          id="background-menu"
+          className={`background ${styleNavHeader?.background}`}
+        />
+
+        <ButtonMenu />
       </div>
     </nav>
   );

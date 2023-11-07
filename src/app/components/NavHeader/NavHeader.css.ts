@@ -12,6 +12,8 @@ const nav = vanillaStyle({
 });
 
 const background = vanillaStyle({
+  clipPath: 'circle(30px at 260px 40px)',
+  transition: 'clip-path 0.5s',
   display: 'none',
   zIndex: 900,
   position: 'fixed',
@@ -20,6 +22,7 @@ const background = vanillaStyle({
   bottom: 0,
   width: '300px',
   background: globalTheme.bg.revert,
+
   '@media': {
     [mediaQueries.tabletLandscape]: {
       display: 'inherit',
