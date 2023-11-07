@@ -1,4 +1,4 @@
-import { style as vanillaStyle } from '@vanilla-extract/css';
+import { globalStyle, style as vanillaStyle } from '@vanilla-extract/css';
 import { globalTheme } from './styles/theme.css';
 import mediaQueries from './styles/mediaQueries';
 
@@ -22,6 +22,18 @@ const wrapperGlobal = vanillaStyle({
     'main'
     'footer'
   `,
+});
+
+globalStyle(`${wrapperGlobal} header`, {
+  gridArea: 'header',
+});
+
+globalStyle(`${wrapperGlobal} main`, {
+  gridArea: 'main',
+});
+
+globalStyle(`${wrapperGlobal} footer`, {
+  gridArea: 'footer',
 });
 
 export const style = {

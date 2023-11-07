@@ -12,6 +12,9 @@ globalStyle('*', {
 });
 
 globalStyle('body', {
+  margin: 0,
+  padding: 0,
+
   background: globalTheme.bg.main,
   color: globalTheme.color.main,
   fontFamily: globalTheme.font.main,

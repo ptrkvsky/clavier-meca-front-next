@@ -1,11 +1,13 @@
 import type { Viewport } from 'next';
+import { globalTheme } from '@/app/styles/theme.css';
 import '@/app/styles/global.css';
 import '@/app/styles/text.css';
 import '@/app/styles/fonts';
-import Providers from './utils/Providers';
-import { globalTheme } from './styles/theme.css';
 import { style } from './layout.css';
-import { Footer } from './components/Footer/Footer';
+
+import Providers from '@/app/utils/Providers';
+import { Header } from '@/app/components/Header';
+import { Footer } from '@/app/components/Footer';
 
 export default function RootLayout({
   children,
@@ -18,6 +20,7 @@ export default function RootLayout({
         <Providers>
           <div className={style.wrapperGlobal}>
             <main className={style.wrapperMain}>{children}</main>
+            <Header />
             <Footer />
           </div>
         </Providers>
