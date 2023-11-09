@@ -14,9 +14,21 @@ globalStyle(`${listItem} a`, {
 
   '@media': {
     [mediaQueries.tabletLandscape]: {
+      opacity: 0,
       color: globalTheme.color.revert,
       fontSize: '34px',
       lineHeight: '1.5',
+      pointerEvents: 'none',
+      transition: 'opacity 0.33s',
+    },
+  },
+});
+
+globalStyle(`.background-open ${listItem} a`, {
+  '@media': {
+    [mediaQueries.tabletLandscape]: {
+      opacity: 1,
+      pointerEvents: 'initial',
     },
   },
 });

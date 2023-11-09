@@ -53,6 +53,7 @@ export function PostsItem({ post }: Readonly<Props>) {
           src={imageUrl}
           width={imageWidth}
           height={imageHeight}
+          loading="lazy"
         />
       </Link>
     </>

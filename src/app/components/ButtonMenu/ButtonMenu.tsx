@@ -1,19 +1,21 @@
 'use client';
 
-import { useEffect } from 'react';
 import { styleButtonMenu } from './ButtonMenu.css';
+import useLegacyEffect from '@/app/hooks/useLegacyEffect/useLegacyEffect';
 
 export function ButtonMenu() {
-  useEffect(() => {
+  useLegacyEffect(() => {
     const buttonMenu: HTMLButtonElement | null =
       document.querySelector('#button-menu');
     const backgroundMenu: HTMLButtonElement | null =
       document.querySelector('#background-menu');
+    const navHeader: HTMLElement | null = document.querySelector('#nav-header');
 
     console.log(buttonMenu);
 
     buttonMenu?.addEventListener('click', () => {
       backgroundMenu?.classList?.toggle('background-open');
+      navHeader?.classList?.toggle('background-open');
     });
   }, []);
 

@@ -18,7 +18,7 @@ export async function NavHeader() {
   if (menuItems?.length === 0) return;
 
   return (
-    <nav className={`desktop ${styleNavHeader.nav}`}>
+    <nav id="nav-header" className={`desktop ${styleNavHeader.nav}`}>
       <div className={styleNavHeader.wrapper}>
         <ul className={styleNavHeader?.ul}>
           {menuItems?.map((menuItem) => {

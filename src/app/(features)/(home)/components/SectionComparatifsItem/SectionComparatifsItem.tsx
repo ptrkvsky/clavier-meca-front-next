@@ -32,6 +32,7 @@ export function SectionComparatifsItem({ post, isRevert }: Readonly<Props>) {
                 width={imageWidth}
                 height={imageHeight}
                 alt={imageAlt}
+                loading="lazy"
               />
             </div>
           </div>
