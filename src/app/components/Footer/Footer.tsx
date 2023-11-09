@@ -13,6 +13,8 @@ interface DataFooter {
   }[];
 }
 
+const LINK_PLAN_SITE = '/page/plan-site';
+
 export async function Footer() {
   const date = new Date();
   const year = date.getFullYear();
@@ -49,9 +51,9 @@ export async function Footer() {
 
         <div className="menu">
           {pathName === '/' ? (
-            <Link href="/plan-site">Plan du site</Link>
+            <Link href={LINK_PLAN_SITE}>Plan du site</Link>
           ) : (
-            <Link href="/plan-site" content="Plan du site" />
+            <Link href={LINK_PLAN_SITE} content="Plan du site" />
           )}
           <br />
           <Link href={mentionsLegalesSlug}>Mentions légales</Link>

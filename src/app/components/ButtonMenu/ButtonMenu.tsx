@@ -11,8 +11,6 @@ export function ButtonMenu() {
       document.querySelector('#background-menu');
     const navHeader: HTMLElement | null = document.querySelector('#nav-header');
 
-    console.log(buttonMenu);
-
     buttonMenu?.addEventListener('click', () => {
       backgroundMenu?.classList?.toggle('background-open');
       navHeader?.classList?.toggle('background-open');
