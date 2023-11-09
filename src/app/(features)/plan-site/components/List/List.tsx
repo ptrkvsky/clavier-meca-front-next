@@ -17,8 +17,6 @@ interface DataSitemap {
 export async function List() {
   const dataSitemap = await fetchSanity<DataSitemap>(siteMapQuery);
 
-  console.log(dataSitemap?.authors);
-
   return (
     <div>
       <h2>Categories</h2>
