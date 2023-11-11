@@ -16,11 +16,9 @@ export async function SectionGuides() {
     <section className={styleSectionGuides?.section}>
       <h2 className={styleSectionGuides?.title}>Comparatifs claviers</h2>
 
-      <div>
-        {postsGuides && postsGuides.length > 0 && (
-          <PostsList posts={postsGuides} />
-        )}
-      </div>
+      {postsGuides && postsGuides.length > 0 && (
+        <PostsList posts={postsGuides} />
+      )}
     </section>
   ) : null;
 }

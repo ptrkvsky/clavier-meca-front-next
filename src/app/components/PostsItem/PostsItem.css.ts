@@ -1,6 +1,6 @@
 import mediaQueries from '@/app/styles/mediaQueries';
 import { globalTheme } from '@/app/styles/theme.css';
-import { style } from '@vanilla-extract/css';
+import { style, globalStyle } from '@vanilla-extract/css';
 
 export const wrapperTitle = style({
   padding: '24px',
@@ -51,7 +51,10 @@ export const wrapperImage = style({
   position: 'relative',
 
   selectors: {
-    '&:after': {
+    '&.hover': {
+      background: globalTheme.color.primary17,
+    },
+    '&.hover:after': {
       content: '""',
       display: 'block',
       position: 'absolute',
@@ -64,9 +67,6 @@ export const wrapperImage = style({
       mixBlendMode: 'multiply',
       transition: 'all 0.3s linear',
     },
-    '&.hover': {
-      background: globalTheme.color.primary17,
-    },
   },
 
   '@media': {
@@ -74,6 +74,20 @@ export const wrapperImage = style({
       bottom: '0',
     },
   },
+});
+
+globalStyle(`${wrapperImage}.hover:after`, {
+  content: '""',
+  display: 'block',
+  position: 'absolute',
+  top: '0',
+  left: '0',
+  width: '100%',
+  height: '100%',
+  opacity: '1',
+  background: globalTheme.color.primary17,
+  mixBlendMode: 'multiply',
+  transition: 'all 0.3s linear',
 });
 
 export const stylePostsItem = {

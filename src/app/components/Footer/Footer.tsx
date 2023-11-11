@@ -13,7 +13,7 @@ interface DataFooter {
   }[];
 }
 
-const LINK_PLAN_SITE = '/page/plan-site';
+const LINK_PLAN_SITE = '/plan-site';
 
 export async function Footer() {
   const date = new Date();

@@ -28,13 +28,13 @@ export function PostsItem({ post }: Readonly<Props>) {
 
   const slug = post?.slug?.current ?? '#';
   const classHover = hoverState ? 'hover' : '';
+  console.log('classHover', classHover);
 
   return (
     <>
       <Link
         className={`${classHover} ${stylePostsItem.wrapperTitle}`}
         href={`/${slug}`}
-        // hover={hoverState}
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
       >
@@ -46,7 +46,6 @@ export function PostsItem({ post }: Readonly<Props>) {
         href={`/${slug}`}
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
-        // hover={hoverState}
       >
         <Image
           alt={imageAlt}
