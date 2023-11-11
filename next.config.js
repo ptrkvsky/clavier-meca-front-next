@@ -11,6 +11,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/guides',
+        destination: '/categories/guides',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = withVanillaExtract(nextConfig);

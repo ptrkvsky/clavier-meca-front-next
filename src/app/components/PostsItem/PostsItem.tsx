@@ -53,6 +53,7 @@ export function PostsItem({ post }: Readonly<Props>) {
           width={imageWidth}
           height={imageHeight}
           loading="lazy"
+          className={stylePostsItem.illu}
         />
       </Link>
     </>

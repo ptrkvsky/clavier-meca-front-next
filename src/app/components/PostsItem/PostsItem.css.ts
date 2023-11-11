@@ -76,6 +76,17 @@ export const wrapperImage = style({
   },
 });
 
+export const illu = style({
+  minHeight: '383px',
+  objectFit: 'cover',
+
+  '@media': {
+    [mediaQueries.mobile]: {
+      bottom: '0',
+    },
+  },
+});
+
 globalStyle(`${wrapperImage}.hover:after`, {
   content: '""',
   display: 'block',
@@ -94,4 +105,5 @@ export const stylePostsItem = {
   title,
   wrapperImage,
   wrapperTitle,
+  illu,
 };
