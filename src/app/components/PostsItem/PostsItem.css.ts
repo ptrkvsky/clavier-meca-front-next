@@ -77,7 +77,7 @@ export const wrapperImage = style({
 });
 
 export const illu = style({
-  minHeight: '383px',
+  height: '383px',
   objectFit: 'cover',
 
   '@media': {

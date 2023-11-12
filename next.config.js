@@ -18,6 +18,21 @@ const nextConfig = {
         destination: '/categories/guides',
         permanent: true,
       },
+      {
+        source: '/comparatifs',
+        destination: '/categories/comparatifs',
+        permanent: true,
+      },
+      {
+        source: '/switches',
+        destination: '/categories/switches',
+        permanent: true,
+      },
+      {
+        source: '/touches',
+        destination: '/categories/touches',
+        permanent: true,
+      },
     ];
   },
 };

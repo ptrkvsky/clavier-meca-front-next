@@ -28,7 +28,6 @@ export function PostsItem({ post }: Readonly<Props>) {
 
   const slug = post?.slug?.current ?? '#';
   const classHover = hoverState ? 'hover' : '';
-  console.log('classHover', classHover);
 
   return (
     <>
