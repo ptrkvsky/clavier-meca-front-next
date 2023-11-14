@@ -2,6 +2,7 @@ import { Post } from '@/app/gql/graphql';
 import { SliceHero } from '../SliceHero';
 import fetchSanity from '@/app/helpers/fetchSanity';
 import { queryPostSlices } from './PostSlices.query';
+import { SliceBody } from '../SliceBody';
 
 interface DataSlices {
   allPost: Post[];
@@ -19,9 +20,10 @@ export async function PostSlices() {
     <div>
       {activeSlices?.map((slice) => {
         let el = null;
+        console.log(slice?._type);
         switch (slice?._type) {
           case 'hero':
-            el = <SliceHero />;
+            el = <SliceHero key={slice?._key} slice={slice} />;
             break;
 
           case 'switchBlock':
@@ -29,7 +31,7 @@ export async function PostSlices() {
             break;
 
           case 'bodySection':
-            el = <div>body section</div>;
+            el = <SliceBody slice={slice} />;
             break;
         }
         return el;

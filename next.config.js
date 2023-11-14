@@ -33,6 +33,11 @@ const nextConfig = {
         destination: '/categories/touches',
         permanent: true,
       },
+      {
+        source: '/comment-faire-clavier-custom',
+        destination: '/article/comment-faire-clavier-custom',
+        permanent: true,
+      },
     ];
   },
 };

@@ -15,6 +15,12 @@ export const queryPostSlices = `
               alt
               asset {
                 url
+                metadata {
+                  dimensions {
+                    width
+                    height
+                  }
+                }
               }
               caption
             }
@@ -46,6 +52,11 @@ export const queryPostSlices = `
             }
             title
           }
+        }
+        ... on BodySection {
+          _key
+        	_type
+          bodyTexttRaw
         }
       }
     }
