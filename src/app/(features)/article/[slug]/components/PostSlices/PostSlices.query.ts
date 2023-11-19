@@ -26,6 +26,39 @@ export const queryPostSlices = `
             }
           }
         }
+        ... on SwitchBlock {
+          _key
+          _type
+          Hn
+          switch {
+            couleur {
+              hex
+            }
+            type
+            distanceDactivation
+            distanceTotale
+            forceDactionnement
+            forceMaximale
+            nom
+            son {
+              asset {
+                url
+              }
+            }
+            mainImage {
+              alt
+              asset {
+                url
+                metadata { 
+                  dimensions { 
+                   width
+                   height
+                  }
+                }
+              }
+            }
+          }
+        }
         ... on KeyboardsTable {
           _type
           descriptionRaw

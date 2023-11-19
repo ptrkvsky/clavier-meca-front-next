@@ -3,15 +3,28 @@ import { SliceHero } from '../SliceHero';
 import fetchSanity from '@/app/helpers/fetchSanity';
 import { queryPostSlices } from './PostSlices.query';
 import { SliceBody } from '../SliceBody';
+import { SliceSwitch } from '../SliceSwitch';
 
 interface DataSlices {
   allPost: Post[];
 }
 
-export async function PostSlices() {
+interface PropsPostSlices {
+  slug: string;
+}
+
+/**
+ * @description
+ * This function is used to render slices of a post.
+ *
+ * @param {string} slug - The slug of the post
+ * @returns {JSX.Element | null} - The JSX element of the slices
+ */
+export async function PostSlices({ slug }: Readonly<PropsPostSlices>) {
   const data = await fetchSanity<DataSlices>(queryPostSlices, {
-    slug: 'comment-faire-clavier-custom',
+    slug,
   });
+
   if (!data) return null;
 
   const activeSlices = data?.allPost[0]?.content?.filter((c) => !c?.disabled);
@@ -20,18 +33,17 @@ export async function PostSlices() {
     <div>
       {activeSlices?.map((slice) => {
         let el = null;
-        console.log(slice?._type);
         switch (slice?._type) {
           case 'hero':
             el = <SliceHero key={slice?._key} slice={slice} />;
             break;
 
           case 'switchBlock':
-            el = <div>switch block</div>;
+            el = <SliceSwitch key={slice?._key} slice={slice} />;
             break;
 
           case 'bodySection':
-            el = <SliceBody slice={slice} />;
+            el = <SliceBody key={slice?._key} slice={slice} />;
             break;
         }
         return el;

@@ -1,10 +1,17 @@
 import { PostSlices } from './components/PostSlices/PostSlices';
 
-export default async function Page() {
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export default async function Page({ params }: Readonly<PageProps>) {
+  const { slug } = params;
   return (
     <div>
       <h1>Page</h1>
-      <PostSlices />
+      <PostSlices slug={slug} />
     </div>
   );
 }
