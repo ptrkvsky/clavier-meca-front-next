@@ -73,6 +73,12 @@ export const queryPostSlices = `
                 alt
                 asset {
                   url
+                  metadata { 
+                    dimensions { 
+                     width
+                     height
+                    }
+                  }
                 }
               }
               urlAmazon

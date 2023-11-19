@@ -38,6 +38,17 @@ const nextConfig = {
         destination: '/article/comment-faire-clavier-custom',
         permanent: true,
       },
+      {
+        source: '/cherry-mx-red-vs-cherry-mx-speed-silver',
+        destination: '/article/cherry-mx-red-vs-cherry-mx-speed-silver',
+        permanent: true,
+      },
+
+      {
+        source: '/meilleur-clavier-developpeur',
+        destination: '/article/meilleur-clavier-developpeur',
+        permanent: true,
+      },
     ];
   },
 };

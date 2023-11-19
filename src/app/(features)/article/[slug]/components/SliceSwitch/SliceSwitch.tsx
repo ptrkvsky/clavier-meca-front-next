@@ -3,15 +3,13 @@ import { styleSliceSwitch as style } from './SliceSwitch.css';
 import { SwitchBlock } from '@/app/gql/graphql';
 import Image from 'next/image';
 import { getImageInfo } from '@/app/utils/getImageInfo';
-import ReactAudioPlayer from 'react-audio-player';
 import { PlayerAudio } from '@/app/components/PlayerAudio/PlayerAudio';
 import { SwitchDetails } from '../SwitchDetails/SwitchDetails';
+import { Hn } from '@/app/interfaces/Hn';
 
 interface Props {
   slice: Slice;
 }
-
-type hn = 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 /**
  * @description
@@ -23,7 +21,7 @@ type hn = 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 export function SliceSwitch({ slice }: Readonly<Props>): JSX.Element {
   const { Hn, switch: switchItem } = slice as SwitchBlock;
 
-  const Heading = (Hn as hn) ?? 'h2';
+  const Heading = (Hn as Hn) ?? 'h2';
 
   const { imageAlt, imageHeight, imageUrl, imageWidth } = getImageInfo(
     switchItem?.mainImage

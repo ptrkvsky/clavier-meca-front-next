@@ -43,7 +43,7 @@ export function getSerializer() {
         return <Link href={href}>{children}</Link>;
       },
       link: (prop: any) => {
-        return <a href={'href'}>{prop.children}</a>;
+        return <a href={prop?.value?.href}>{prop.children}</a>;
       },
     },
   };

@@ -4,6 +4,8 @@ import fetchSanity from '@/app/helpers/fetchSanity';
 import { queryPostSlices } from './PostSlices.query';
 import { SliceBody } from '../SliceBody';
 import { SliceSwitch } from '../SliceSwitch';
+import { SliceHighlight } from '../SliceHighlight';
+import { SliceKeyyboardsComparaison } from '../SliceKeyyboardsComparaison';
 
 interface DataSlices {
   allPost: Post[];
@@ -33,9 +35,18 @@ export async function PostSlices({ slug }: Readonly<PropsPostSlices>) {
     <div>
       {activeSlices?.map((slice) => {
         let el = null;
+
         switch (slice?._type) {
           case 'hero':
             el = <SliceHero key={slice?._key} slice={slice} />;
+            break;
+
+          case 'highlight':
+            el = <SliceHighlight key={slice._key} slice={slice} />;
+            break;
+
+          case 'keyboardsTable':
+            el = <SliceKeyyboardsComparaison key={slice._key} slice={slice} />;
             break;
 
           case 'switchBlock':
@@ -46,6 +57,7 @@ export async function PostSlices({ slug }: Readonly<PropsPostSlices>) {
             el = <SliceBody key={slice?._key} slice={slice} />;
             break;
         }
+
         return el;
       })}
     </div>
