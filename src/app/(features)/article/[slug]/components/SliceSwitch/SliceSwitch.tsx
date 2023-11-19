@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { getImageInfo } from '@/app/utils/getImageInfo';
 import ReactAudioPlayer from 'react-audio-player';
 import { PlayerAudio } from '@/app/components/PlayerAudio/PlayerAudio';
+import { SwitchDetails } from '../SwitchDetails/SwitchDetails';
 
 interface Props {
   slice: Slice;
@@ -47,7 +48,7 @@ export function SliceSwitch({ slice }: Readonly<Props>): JSX.Element {
 
         <div className="switch-desc-wrapper">
           <div className="switch-desc">
-            {/* composant switch detail */}
+            {switchItem && <SwitchDetails switchItem={switchItem} />}
             {grosSon && <PlayerAudio grosSon={grosSon} />}
           </div>
         </div>
