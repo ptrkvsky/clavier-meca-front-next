@@ -49,6 +49,11 @@ const nextConfig = {
         destination: '/article/meilleur-clavier-developpeur',
         permanent: true,
       },
+      {
+        source: '/comparatif-des-meilleurs-claviers',
+        destination: '/article/comparatif-des-meilleurs-claviers',
+        permanent: true,
+      },
     ];
   },
 };

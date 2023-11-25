@@ -1,4 +1,5 @@
 import { KeyboardBlock } from '@/app/gql/graphql';
+import { stylesButton } from '@/app/styles/buttons.css';
 import { getImageInfo } from '@/app/utils/getImageInfo';
 import Image from 'next/image';
 
@@ -13,8 +14,10 @@ export function TableKeyboardItem({ keyboard, position }: Readonly<Props>) {
   if (!keyboardItem) return null;
   const mainImage = keyboardItem.mainImage;
 
-  const { imageAlt, imageHeight, imageUrl, imageWidth } =
-    getImageInfo(mainImage);
+  const { imageAlt, imageUrl } = getImageInfo(mainImage);
+
+  const urlProduct =
+    keyboard.keyboard?.urlAmazon ?? keyboard.keyboard?.urlMateriel ?? '';
 
   return (
     <tr>
@@ -27,8 +30,9 @@ export function TableKeyboardItem({ keyboard, position }: Readonly<Props>) {
           <Image
             src={imageUrl}
             alt={imageAlt}
-            height={imageHeight}
-            width={imageWidth}
+            width={220}
+            height={150}
+            loading="lazy"
           />
         )}
       </td>
@@ -38,10 +42,9 @@ export function TableKeyboardItem({ keyboard, position }: Readonly<Props>) {
         <span className="currency">€</span>
       </td>
       <td className="cell offer">
-        {/* <CloakButton
-          url={keyboard.urlAmazon || keyboard.urlMateriel}
-          content="Voir l'offre"
-        /> */}
+        <a className={stylesButton.primary} href={urlProduct}>
+          Voir l&apos;offre
+        </a>
       </td>
     </tr>
   );

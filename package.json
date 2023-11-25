@@ -10,6 +10,7 @@
     "codegen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
+    "@next-safe/middleware": "^0.10.0",
     "@portabletext/react": "^3.0.11",
     "@tanstack/react-query": "5.7.0",
     "@vanilla-extract/css": "1.13.0",

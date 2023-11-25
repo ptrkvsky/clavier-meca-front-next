@@ -32,15 +32,19 @@ export function getSerializer() {
   const serializers = {
     marks: {
       internalLink: async ({ children, value }: InternalLink) => {
-        const ref = value?.reference?._ref;
+        try {
+          const ref = value?.reference?._ref;
 
-        const dataPost = await fetchSanity<PostSlug>(querySlugPost, {
-          ref,
-        });
+          const dataPost = await fetchSanity<PostSlug>(querySlugPost, {
+            ref,
+          });
 
-        const href = dataPost?.post?.slug?.current ?? '#';
+          const href = dataPost?.post?.slug?.current ?? '#';
 
-        return <Link href={href}>{children}</Link>;
+          return <Link href={href}>{children}</Link>;
+        } catch (error) {
+          console.error('🔥', error);
+        }
       },
       link: (prop: any) => {
         return <a href={prop?.value?.href}>{prop.children}</a>;

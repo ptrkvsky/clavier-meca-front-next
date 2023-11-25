@@ -6,6 +6,7 @@ import { SliceBody } from '../SliceBody';
 import { SliceSwitch } from '../SliceSwitch';
 import { SliceHighlight } from '../SliceHighlight';
 import { SliceKeyyboardsComparaison } from '../SliceKeyyboardsComparaison';
+import { SliceKeyboard } from '../sliceKeyboard';
 
 interface DataSlices {
   allPost: Post[];
@@ -43,6 +44,11 @@ export async function PostSlices({ slug }: Readonly<PropsPostSlices>) {
 
           case 'highlight':
             el = <SliceHighlight key={slice._key} slice={slice} />;
+            break;
+
+          case 'keyboardsSection':
+            console.log('-----------> keyboardsSection');
+            el = <SliceKeyboard key={slice._key} slice={slice} />;
             break;
 
           case 'keyboardsTable':

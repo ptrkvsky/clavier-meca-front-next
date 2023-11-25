@@ -14,6 +14,7 @@ export const SliceBody = ({ slice }: Readonly<Props>) => {
   const serializers = getSerializer();
   return (
     <section className={style?.sectionBody}>
+      {/* @ts-ignore */}
       <PortableText value={bodyTexttRaw} components={serializers} />
     </section>
   );
