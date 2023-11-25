@@ -5,6 +5,7 @@ import { title as styleTitle } from '@/app/styles/titles.css';
 import { Hn } from '@/app/interfaces/Hn';
 import { styleSliceKeyboard } from './SliceKeyboard.css';
 import { Article } from '@/app/(features)/article/[slug]/components/sliceKeyboard/components/Article';
+import { Aside } from './components/Aside';
 
 interface Props {
   slice: Slice;
@@ -43,7 +44,15 @@ export function SliceKeyboard({ slice }: Readonly<Props>) {
           })}
         </div>
         {/* COL RIGHT */}
-        <div className="col-right"></div>
+        <div className="col-right">
+          {keyboardCol && (
+            <Aside
+              keyboard={keyboardCol}
+              subTitleCol={subTitleCol}
+              titleCol={titleCol}
+            />
+          )}
+        </div>
       </div>
     </section>
   );
