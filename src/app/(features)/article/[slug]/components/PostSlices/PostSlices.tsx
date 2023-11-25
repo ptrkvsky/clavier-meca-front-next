@@ -47,7 +47,6 @@ export async function PostSlices({ slug }: Readonly<PropsPostSlices>) {
             break;
 
           case 'keyboardsSection':
-            console.log('-----------> keyboardsSection');
             el = <SliceKeyboard key={slice._key} slice={slice} />;
             break;
 

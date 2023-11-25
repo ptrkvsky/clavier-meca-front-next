@@ -28,6 +28,4 @@ https://dhh9ms17.api.sanity.io/v1/graphql/production/default
 Ajouter .env.example
 
 ## Temps
-17h30
-
-start 12H30
+21h30

@@ -1,4 +1,4 @@
-import { PostSlices } from './components/PostSlices/PostSlices';
+import { TemplatePost } from './components/TemplatePost';
 
 interface PageProps {
   params: {
@@ -8,10 +8,5 @@ interface PageProps {
 
 export default async function Page({ params }: Readonly<PageProps>) {
   const { slug } = params;
-  return (
-    <div>
-      <h1>Page</h1>
-      <PostSlices slug={slug} />
-    </div>
-  );
+  return <TemplatePost slug={slug} />;
 }
