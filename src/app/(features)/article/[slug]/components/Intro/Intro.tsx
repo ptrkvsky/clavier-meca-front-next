@@ -1,6 +1,7 @@
 import fetchSanity from '@/app/helpers/fetchSanity';
 import { queryIntro } from './Intro.query';
 import { IntroDate } from '@/app/(features)/article/[slug]/components/IntroDate';
+import { styleIntro as style } from './Intro.css';
 interface PostIntro {
   title: string;
   _updatedAt: string;
@@ -30,21 +31,11 @@ export async function Intro({ slug }: Props) {
 
   const post = dataIntro?.posts[0];
 
-  const date = new Date('2023-04-20T07:00:24Z');
-  const formattedDate = date.toLocaleDateString('fr-FR', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  });
-
-  console.log(formattedDate);
-
   return (
-    <div>
-      <span className="info categorie">{post.categories[0].title}</span>
-      <h1>{post.title}</h1>
-      <div className="date-wrapper">
-        <span className="info date"></span>
+    <div className={style.wrapperMain}>
+      <span className={style.categorie}>{post.categories[0].title}</span>
+      <h1 className={style.h1}>{post.title}</h1>
+      <div className={style.wrapperDate}>
         <IntroDate date={post._updatedAt} />
       </div>
     </div>
