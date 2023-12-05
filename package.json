@@ -12,10 +12,12 @@
   "dependencies": {
     "@next-safe/middleware": "^0.10.0",
     "@portabletext/react": "^3.0.11",
+    "@sanity/image-url": "^1.0.2",
     "@tanstack/react-query": "5.7.0",
     "@vanilla-extract/css": "1.13.0",
     "graphql": "16.8.1",
     "next": "^14.0.2",
+    "next-sanity": "^6.0.5",
     "react": "18",
     "react-audio-player": "^0.17.0",
     "react-dom": "18"

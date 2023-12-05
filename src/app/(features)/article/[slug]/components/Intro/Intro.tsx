@@ -22,7 +22,7 @@ interface Props {
   slug: string;
 }
 
-export async function Intro({ slug }: Props) {
+export async function Intro({ slug }: Readonly<Props>) {
   const dataIntro = await fetchSanity<DataIntro>(queryIntro, {
     slug,
   });

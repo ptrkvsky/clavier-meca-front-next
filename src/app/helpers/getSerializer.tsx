@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import fetchSanity from './fetchSanity';
+import { urlFor } from '../utils/sanityClient';
 
 const querySlugPost = `
   query($slug: ID!) {
@@ -30,6 +31,16 @@ interface InternalLink {
 
 export function getSerializer() {
   const serializers = {
+    types: {
+      mainImage: (data: any) => {
+        const id = data?.value?.asset?._ref;
+        const image = urlFor(id).auto('format').format('webp').url();
+
+        // eslint-disable-next-line @next/next/no-img-element
+        return <img className="img-serialized" src={image} alt="" />;
+        //query sanity image from data ref
+      },
+    },
     marks: {
       internalLink: async ({ children, value }: InternalLink) => {
         try {
