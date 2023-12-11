@@ -1,11 +1,11 @@
 import { PortableText } from '@portabletext/react';
 import { KeyboardsSection } from '@/app/gql/graphql';
-import { Slice } from '../../interfaces/Slice';
+import { Slice } from '@article/interfaces/Slice';
 import { title as styleTitle } from '@/app/styles/titles.css';
 import { Hn } from '@/app/interfaces/Hn';
 import { styleSliceKeyboard } from './SliceKeyboard.css';
-import { Article } from '@/app/(features)/article/[slug]/components/sliceKeyboard/components/Article';
 import { Aside } from './components/Aside';
+import { Article } from './components/Article';
 
 interface Props {
   slice: Slice;

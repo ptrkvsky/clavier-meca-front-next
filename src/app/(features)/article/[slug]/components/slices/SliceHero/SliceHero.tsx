@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Slice } from '../../interfaces/Slice';
+import { Slice } from '@article/interfaces/Slice';
 import { Hero } from '@/app/gql/graphql';
 import { styleSliceHero as style } from './SliceHero.css';
 import { PortableText } from '@portabletext/react';

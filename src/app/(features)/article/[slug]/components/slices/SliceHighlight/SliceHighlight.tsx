@@ -1,7 +1,7 @@
 import { PortableText } from '@portabletext/react';
 import { Highlight } from '@/app/gql/graphql';
 import { styleSliceHighlight as style } from './SliceHighlight.css';
-import { Slice } from '../../interfaces/Slice';
+import { Slice } from '@article/interfaces/Slice';
 
 interface Props {
   slice: Slice;

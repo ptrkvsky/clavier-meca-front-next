@@ -1,10 +1,10 @@
 import { PortableText } from '@portabletext/react';
-import { KeyboardsSection } from '@/app/gql/graphql';
-import { Slice } from '../../interfaces/Slice';
-import { Hn } from '@/app/interfaces/Hn';
 import { title as styleTitle } from '@/app/styles/titles.css';
+import { KeyboardsSection } from '@/app/gql/graphql';
+import { Slice } from '@article/interfaces/Slice';
+import { Hn } from '@/app/interfaces/Hn';
 import { styleSliceKeyboardsComparaison as style } from './SliceKeyyboardsComparaison.css';
-import { TableKeyboardItem } from '../TableKeyboardItem';
+import { TableKeyboardItem } from '@article/components/TableKeyboardItem';
 
 interface Props {
   slice: Slice;

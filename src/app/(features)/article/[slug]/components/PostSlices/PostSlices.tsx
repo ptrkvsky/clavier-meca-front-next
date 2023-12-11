@@ -1,13 +1,13 @@
 import { Post } from '@/app/gql/graphql';
-import { SliceHero } from '../SliceHero';
+import { SliceHero } from '@article/components/slices/SliceHero';
 import fetchSanity from '@/app/helpers/fetchSanity';
 import { queryPostSlices } from './PostSlices.query';
-import { SliceBody } from '../SliceBody';
-import { SliceSwitch } from '../SliceSwitch';
-import { SliceHighlight } from '../SliceHighlight';
-import { SliceKeyyboardsComparaison } from '../SliceKeyyboardsComparaison';
-import { SliceKeyboard } from '../sliceKeyboard';
-import { SliceProducts } from '../slices/sliceProducts/SliceProducts';
+import { SliceBody } from '@article/components/slices/SliceBody';
+import { SliceSwitch } from '@article/components/slices/SliceSwitch';
+import { SliceHighlight } from '@article/components/slices/SliceHighlight';
+import { SliceKeyyboardsComparaison } from '@article/components/slices/SliceKeyyboardsComparaison';
+import { SliceKeyboard } from '@article/components/slices/sliceKeyboard';
+import { SliceProducts } from '@article/components/slices/sliceProducts/SliceProducts';
 
 interface DataSlices {
   allPost: Post[];
@@ -64,7 +64,7 @@ export async function PostSlices({ slug }: Readonly<PropsPostSlices>) {
             break;
 
           case 'productsSection':
-            el = <SliceProducts key={c._key} slice={slice} />;
+            el = <SliceProducts key={slice._key} slice={slice} />;
             break;
 
           default:

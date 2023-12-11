@@ -1,8 +1,8 @@
 import { BodySection } from '@/app/gql/graphql';
-import { Slice } from '../../interfaces/Slice';
 import { PortableText } from '@portabletext/react';
 import { styleSliceBody as style } from './SliceBody.css';
 import { getSerializer } from '@/app/helpers/getSerializer';
+import { Slice } from '@article/interfaces/Slice';
 
 interface Props {
   slice: Slice;

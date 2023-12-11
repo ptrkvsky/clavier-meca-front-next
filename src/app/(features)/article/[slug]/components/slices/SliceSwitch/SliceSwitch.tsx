@@ -4,7 +4,7 @@ import { SwitchBlock } from '@/app/gql/graphql';
 import Image from 'next/image';
 import { getImageInfo } from '@/app/utils/getImageInfo';
 import { PlayerAudio } from '@/app/components/PlayerAudio/PlayerAudio';
-import { SwitchDetails } from '../SwitchDetails/SwitchDetails';
+import { SwitchDetails } from '@article/components/SwitchDetails';
 import { Hn } from '@/app/interfaces/Hn';
 
 interface Props {
