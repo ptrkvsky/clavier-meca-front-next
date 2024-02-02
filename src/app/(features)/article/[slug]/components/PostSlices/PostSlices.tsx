@@ -37,6 +37,7 @@ export async function PostSlices({ slug }: Readonly<PropsPostSlices>) {
     <div>
       {activeSlices?.map((slice) => {
         let el = null;
+        console.log(slice?._type);
 
         switch (slice?._type) {
           case 'hero':

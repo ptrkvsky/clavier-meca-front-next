@@ -170,6 +170,37 @@ query($slug: String!) {
         _type
         bodyTexttRaw
       }
+      ... on ProductsSection {
+        _key
+        _type
+        products {
+          Hn
+          title
+          size
+          product {
+            asin
+            url
+            title
+            longDescRaw
+            mainImage {
+              alt
+              caption
+              asset {
+                url
+                metadata {
+                  dimensions {
+                    aspectRatio
+                    width
+                    height
+                  }
+                }
+                description
+              }
+            }
+          }
+          _type
+        }
+      }
     }
   }
 }
